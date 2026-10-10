@@ -3,12 +3,10 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-
 # Pydantic model
 class ArticleCreate(BaseModel):
     title: str
     content: str
-
 
 # Temporary article database
 articles = [
@@ -29,24 +27,20 @@ articles = [
     }
 ]
 
-
 # Root endpoint
 @app.get("/")
 def root():
     return {"message": "Football Blog API is running"}
-
 
 # Health endpoint
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
 
-
 # Get all articles
 @app.get("/articles")
 def get_articles():
     return articles
-
 
 # Get a single article by ID
 @app.get("/articles/{article_id}")
@@ -110,3 +104,4 @@ def delete_article(article_id: int):
         status_code=404,
         detail="Article not found"
     )
+
