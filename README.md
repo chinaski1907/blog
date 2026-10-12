@@ -1,1 +1,1 @@
-Hobi projesi, blog... vira bismillah
+This is the repo for my childhood dream. 
